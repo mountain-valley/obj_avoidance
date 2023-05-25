@@ -1,7 +1,7 @@
-#define trigPin 11  // These lines assign names to values
-#define echoPin 10  // so they can be easily identified.
-#define buzzer 12  // These are set before the code
-#define vibrator 9
+#define trigPin 7  // These lines assign names to values
+#define echoPin 6  // so they can be easily identified.
+#define buzzer 2  // These are set before the code
+#define vibrator 3
 const int low_range = 60;
 const int max_range = 120;
 //bool beep = true;
@@ -27,13 +27,26 @@ void loop() {
   // beep depending on the distance detected. If the object
   // is within 62 start the beeps.
     
-  if(distance > low_range and distance < max_range) {
+  if(distance > low_range and distance < max_range) { 
+//      if (beep){
+//        do_beep(1);
+//      }
+//      else {
+//        do_vibrate();
+//      }
       do_vibrate();
       do_beep(1);
       delay(200);
   }
   else if (distance > 0 and distance < low_range) 
-  {
+  { 
+//      if (beep){
+//        do_beep(0);
+//      }
+//      else {
+//        do_vibrate();
+//      }
+
       do_vibrate();
       do_beep(0);
   }
